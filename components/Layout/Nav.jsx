@@ -1,5 +1,5 @@
-import { Avatar } from '@/components/Avatar';
-import { Button, ButtonLink } from '@/components/Button';
+import { Button, Avatar, Container } from '@material-ui/core';
+
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { fetcher } from '@/lib/fetch';
 import { useCurrentUser } from '@/lib/user';
@@ -7,10 +7,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
-import Container from './Container';
+
 import styles from './Nav.module.css';
 import Spacer from './Spacer';
-import Wrapper from './Wrapper';
 
 const UserMenu = ({ user, mutate }) => {
   const menuRef = useRef();
@@ -99,7 +98,7 @@ const Nav = () => {
 
   return (
     <nav className={styles.nav}>
-      <Wrapper className={styles.wrapper}>
+      <Container>
         <Container
           className={styles.content}
           alignItems="center"
@@ -116,14 +115,14 @@ const Nav = () => {
             ) : (
               <>
                 <Link passHref href="/login">
-                  <ButtonLink
+                  <Link
                     size="small"
                     type="success"
                     variant="ghost"
                     color="link"
                   >
                     Log in
-                  </ButtonLink>
+                  </Link>
                 </Link>
                 <Spacer axis="horizontal" size={0.25} />
                 <Link passHref href="/sign-up">
@@ -135,7 +134,7 @@ const Nav = () => {
             )}
           </Container>
         </Container>
-      </Wrapper>
+      </Container>
     </nav>
   );
 };

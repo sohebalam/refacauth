@@ -1,13 +1,14 @@
-import { Feed } from '@/page-components/Feed';
 import Head from 'next/head';
-
+import { Container, Spacer, Wrapper } from '@/components/Layout';
 const FeedPage = () => {
   return (
     <>
       <Head>
         <title>Feed</title>
       </Head>
-      <Feed />
+      <Wrapper>
+        <h1>Profile</h1>
+      </Wrapper>
     </>
   );
 };
