@@ -7,6 +7,8 @@ import nc from 'next-connect';
 import isEmail from 'validator/lib/isEmail';
 import normalizeEmail from 'validator/lib/normalizeEmail';
 
+//registerUser
+
 const handler = nc(ncOpts);
 
 handler.use(database);
